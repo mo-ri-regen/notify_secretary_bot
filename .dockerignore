@@ -1,0 +1,10 @@
+.env
+.env.sample
+.git
+.gitignore
+.vscode
+.venv
+.dockervenv
+
+# Documents
+README.md

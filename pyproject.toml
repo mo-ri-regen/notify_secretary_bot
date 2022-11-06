@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "notice-secretary-bot"
+version = "0.1.0"
+description = ""
+authors = ["mo-ri-regen"]
+readme = "README.md"
+packages = [{include = "notice_secretary_bot"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+"discord.py" = "^2.0.1"
+discordwebhook = "^1.0.3"
+python-dotenv = "^0.21.0"
+schedule = "^1.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
