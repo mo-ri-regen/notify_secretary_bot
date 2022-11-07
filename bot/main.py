@@ -1,10 +1,6 @@
 import os
 from dotenv import load_dotenv
 import discord
-
-import schedule
-from time import sleep
-
 from discord.ext import tasks
 
 load_dotenv()
@@ -15,7 +11,6 @@ async def send_message():
     print("タスク実行中")
     await channel_sent.send("5秒経ったよ")
 
-# 接続に必要なオブジェクトを生成
 client = discord.Client(intents=discord.Intents.all())
 
 @client.event
