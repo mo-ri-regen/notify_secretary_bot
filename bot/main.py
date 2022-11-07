@@ -5,12 +5,15 @@ import discord
 import schedule
 from time import sleep
 
+from discord.ext import tasks
+
+load_dotenv()
+
 #01 定期実行する関数を準備
-def task():
+@tasks.loop(seconds=5)
+async def send_message():
     print("タスク実行中")
-    
-#02 スケジュール登録
-schedule.every(10).seconds.do(task)
+    await channel_sent.send("5秒経ったよ")
 
 # 接続に必要なオブジェクトを生成
 client = discord.Client(intents=discord.Intents.all())
@@ -19,12 +22,9 @@ client = discord.Client(intents=discord.Intents.all())
 async def on_ready():
 # 起動したらターミナルにログイン通知が表示される
     print('ログインしました')
+    global channel_sent
+    channel_sent = client.get_channel(int(os.environ["CHANNEL_ID"]))
 
-    #03 イベント実行
-    while True:
-        schedule.run_pending()
-        sleep(1)
+    send_message.start() #定期実行するメソッドの後ろに.start()をつける 
     
-load_dotenv()
-
 client.run(os.environ['TOKEN'])
