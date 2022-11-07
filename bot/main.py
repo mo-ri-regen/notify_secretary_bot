@@ -3,13 +3,22 @@ from dotenv import load_dotenv
 import discord
 from discord.ext import tasks
 
+import notify_bot
+
 load_dotenv()
 
 #01 定期実行する関数を準備
 @tasks.loop(seconds=5)
 async def send_message():
     print("タスク実行中")
-    await channel_sent.send("5秒経ったよ")
+    
+    weekday = notify_bot.get_weekday()
+    text = notify_bot.create_text(weekday)
+
+    embed = discord.Embed(title="コラム担当者おしらせ",description=text, color=0x87CEEB)    
+    
+    await channel_sent.send(embed=embed)    
+
 
 client = discord.Client(intents=discord.Intents.all())
 
