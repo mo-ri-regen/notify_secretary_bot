@@ -27,3 +27,8 @@ def create_text(weekday:int):
     
     return f"今日のコラム担当者は<@{columnist_id}>です"
 
+# 曜日取得
+# 月曜日:0...日曜日:6
+def get_weekday():
+    
+    return datetime.date.today().weekday()
