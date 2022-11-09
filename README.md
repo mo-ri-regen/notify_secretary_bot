@@ -36,15 +36,7 @@ docker-compose run --entrypoint "poetry add discord.py" notice-secretary-bot
 ```
 
 ```bash
-docker-compose run --entrypoint "poetry add discordwebhook" notice-secretary-bot
-```
-
-```bash
 docker-compose run --entrypoint "poetry add python-dotenv" notice-secretary-bot
-```
-
-```bash
-docker-compose run --entrypoint "poetry add schedule" notice-secretary-bot
 ```
 
 新しい Python パッケージを追加した場合は下記コマンドで再ビルドをします
@@ -76,3 +68,7 @@ https://minerva.mamansoft.net/Notes/Poetry%E3%81%A7requirements.txt%E3%82%92%E4%
 Heroku にデプロイしたときに自動的に実行されるコマンドを記述
 
 https://devcenter.heroku.com/ja/articles/release-phase
+
+## 参考
+
+https://qiita.com/rareshana/items/2917b42016557e27229b
