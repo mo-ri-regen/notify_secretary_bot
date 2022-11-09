@@ -7,9 +7,14 @@ import notify_bot
 
 load_dotenv()
 
-#01 定期実行する関数を準備
-@tasks.loop(seconds=5)
+@tasks.loop(seconds=60)
 async def send_message():
+
+    now = notify_bot.get_now()
+
+    if now != os.environ["NOTIFICATION"]:
+        return
+    
     print("タスク実行中")
     
     weekday = notify_bot.get_weekday()

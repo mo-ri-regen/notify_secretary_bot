@@ -32,3 +32,8 @@ def create_text(weekday:int):
 def get_weekday():
     
     return datetime.date.today().weekday()
+
+def get_now():
+    
+    #JST
+    return datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9))).strftime('%H:%M')
