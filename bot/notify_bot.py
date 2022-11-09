@@ -25,15 +25,17 @@ def create_text(weekday:int):
     else:
         columnist_id = os.environ['SUNDAY']
     
-    return f"今日のコラム担当者は<@{columnist_id}>です"
+    return f"今日のコラム担当者は<@{columnist_id}>です\nそれでは今日もCoolな1日を🆒(コピペ用)"
 
 # 曜日取得
 # 月曜日:0...日曜日:6
 def get_weekday():
     
+    print("曜日取得")
     return datetime.date.today().weekday()
 
 def get_now():
     
+    print("時間取得")
     #JST
     return datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9))).strftime('%H:%M')

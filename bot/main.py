@@ -15,7 +15,7 @@ async def send_message(channel_sent):
     if now != os.environ["NOTIFICATION"]:
         return
     
-    print("タスク実行中")
+    print("タスク実行開始")
     
     weekday = notify_bot.get_weekday()
     text = notify_bot.create_text(weekday)
@@ -24,6 +24,7 @@ async def send_message(channel_sent):
     
     await channel_sent.send(embed=embed)    
 
+    print("メッセージ送信完了")
 
 client = discord.Client(intents=discord.Intents.all())
 
