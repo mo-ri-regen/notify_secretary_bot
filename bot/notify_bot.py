@@ -36,6 +36,5 @@ def get_weekday():
 
 def get_now():
     
-    print("時間取得")
     #JST
     return datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9))).strftime('%H:%M')
