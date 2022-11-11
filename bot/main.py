@@ -18,7 +18,12 @@ async def send_message(channel_sent):
     print("タスク実行開始")
     
     weekday = notify_bot.get_weekday()
+    
+    print("曜日取得完了")
+    
     text = notify_bot.create_text(weekday)
+
+    print("メッセージ作成完了")
 
     embed = discord.Embed(title="コラム担当者おしらせ",description=text, color=0x87CEEB)    
     
