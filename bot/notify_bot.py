@@ -34,6 +34,10 @@ def get_weekday():
     print("曜日取得")
     return datetime.date.today().weekday()
 
+def get_tomorrow_weekday(weekday):
+    
+    return (weekday + 1) % 7
+
 def get_now():
     
     #JST
