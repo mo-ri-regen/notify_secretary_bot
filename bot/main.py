@@ -18,10 +18,11 @@ async def send_message(channel_sent):
     print("タスク実行開始")
     
     weekday = notify_bot.get_weekday()
+    tomorrow_weekday = notify_bot.get_tomorrow_weekday(weekday)
     
     print("曜日取得完了")
     
-    text = notify_bot.create_text(weekday)
+    text = notify_bot.create_text(tomorrow_weekday)
 
     print("メッセージ作成完了")
 
